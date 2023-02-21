@@ -3,10 +3,9 @@ import subprocess
 def delete_branches():
     # Get the list of all branches
     branches = subprocess.check_output(["git", "branch"]).decode("utf-8").split("\n")
-    
     # Get the name of the current branch
     current_branch = subprocess.check_output(["git", "rev-parse", "--abbrev-ref", "HEAD"]).decode("utf-8").strip()
-    
+
     # Loop through the branches
     for branch in branches:
         branch = branch.strip()
@@ -15,6 +14,9 @@ def delete_branches():
             continue
         
         # Delete the branch
-        subprocess.call(["git", "branch", "-d", branch])
-
+        subprocess.call(["git", "branch", "-D", branch])
+        
+        # Print a confirmation message
+        print(f"Deleted branch: {branch}")
+        
 delete_branches()
