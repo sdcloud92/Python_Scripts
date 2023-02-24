@@ -1,0 +1,34 @@
+{
+    "Records": [
+        {
+            "EventSource": "aws:sns",
+            "EventVersion": "1.0",
+            "Sns": {
+                "Type": "Notification",
+                "MessageId": "abc-123-def-456",
+                "TopicArn": "arn:aws:sns:your-region:your-account-id:your-topic-name",
+                "Subject": "Example message",
+                "Message": "{\"key1\":\"value1\", \"key2\":\"value2\", \"key3\":\"value3\"}",
+                "Timestamp": "2023-02-24T12:34:56.789Z",
+                "SignatureVersion": "1",
+                "Signature": "xyzabc123",
+                "SigningCertUrl": "https://sns.your-region.amazonaws.com/SimpleNotificationService-xyzabc.pem",
+                "UnsubscribeUrl": "https://sns.your-region.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:your-region:your-account-id:your-topic-name:12345678-90ab-cdef-1234-567890abcdef",
+                "MessageAttributes": {
+                    "key1": {
+                        "Type": "String",
+                        "Value": "value1"
+                    },
+                    "key2": {
+                        "Type": "String",
+                        "Value": "value2"
+                    },
+                    "key3": {
+                        "Type": "String",
+                        "Value": "value3"
+                    }
+                }
+            }
+        }
+    ]
+}
