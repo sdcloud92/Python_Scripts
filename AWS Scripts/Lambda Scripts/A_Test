@@ -5,9 +5,12 @@ from datetime import datetime
 
 sqs = boto3.client('sqs')
 
+message_body = str(datetime.now())
+message_deduplication_id = message_body + str(uuid.uuid4())
+
 response = sqs.send_message(
     QueueUrl='https://sqs.us-east-1.amazonaws.com/491620774077/my-new-queue',
-    MessageBody=str(datetime.now()),
+    MessageBody=message_body,
     DelaySeconds=123,
     MessageAttributes={
         'string': {
@@ -23,6 +26,6 @@ response = sqs.send_message(
             'DataType': 'string'
         }
     },
-    MessageDeduplicationId=str(uuid.uuid4()),
+    MessageDeduplicationId=message_deduplication_id,
     MessageGroupId='string'
 )
