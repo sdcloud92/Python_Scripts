@@ -1,0 +1,39 @@
+import json
+import boto3
+from datetime import datetime 
+
+sqs = boto3.client('sqs')
+
+response = sqs.send_message(
+    QueueUrl='https://sqs.us-east-1.amazonaws.com/491620774077/my-new-queue',
+    MessageBody=str(datetime.now()),
+    DelaySeconds=123,
+    MessageAttributes={
+        'string': {
+            'StringValue': 'string',
+            'BinaryValue': b'bytes',
+            'StringListValues': [
+                'string',
+            ],
+            'BinaryListValues': [
+                b'bytes',
+            ],
+            'DataType': 'string'
+        }
+    },
+    MessageSystemAttributes={
+        'string': {
+            'StringValue': 'string',
+            'BinaryValue': b'bytes',
+            'StringListValues': [
+                'string',
+            ],
+            'BinaryListValues': [
+                b'bytes',
+            ],
+            'DataType': 'string'
+        }
+    },
+    MessageDeduplicationId='string',
+    MessageGroupId='string'
+)
