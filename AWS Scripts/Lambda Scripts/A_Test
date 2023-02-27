@@ -12,12 +12,6 @@ response = sqs.send_message(
         'string': {
             'StringValue': 'string',
             'BinaryValue': b'bytes',
-            'StringListValues': [
-                'string',
-            ],
-            'BinaryListValues': [
-                b'bytes',
-            ],
             'DataType': 'string'
         }
     },
@@ -25,12 +19,6 @@ response = sqs.send_message(
         'string': {
             'StringValue': 'string',
             'BinaryValue': b'bytes',
-            'StringListValues': [
-                'string',
-            ],
-            'BinaryListValues': [
-                b'bytes',
-            ],
             'DataType': 'string'
         }
     },
