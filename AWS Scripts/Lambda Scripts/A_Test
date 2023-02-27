@@ -1,5 +1,6 @@
 import json
 import boto3
+import uuid
 from datetime import datetime 
 
 sqs = boto3.client('sqs')
@@ -22,6 +23,6 @@ response = sqs.send_message(
             'DataType': 'string'
         }
     },
-    MessageDeduplicationId=str(datetime.now().timestamp()),
+    MessageDeduplicationId=str(uuid.uuid4()),
     MessageGroupId='string'
 )
