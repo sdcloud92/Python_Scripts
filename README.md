@@ -1,6 +1,6 @@
 ### Thanks for visiting my Python Repo! 👋
 
-This repo contains my projects showcasing my active learning. My Python focus mainly on scripts that automate the provisioning, metrics tracking, and reporting of cloud-based resources to support business applications.
+My Python focus mainly on scripts that automate the provisioning, metrics tracking, and reporting of cloud-based resources to support business applications.
 
 Feel free to connect with me here:
 
